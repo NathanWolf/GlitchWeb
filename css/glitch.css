@@ -5,26 +5,27 @@ html,body {
 }
 
 body {
-    background: #EEE;
+    background: #444;
+    color: #EEE;
     overscroll-behavior-y: none;
     overflow: hidden;
     user-select: none;
 }
 
 .tile {
-    color: black;
+    color: white;
     width: 5em;
     min-width: 5em;
     height: 5em;
     text-align: center;
     vertical-align: middle;
-    border: 1px solid black;
+    border: 1px solid #800;
     padding: 1em;
     margin: 1em;
     text-decoration: none;
     font-size: 1.5em;
     display: inline-block;
-    background-color: white;
+    background-color: black;
     cursor: pointer;
 }
 
