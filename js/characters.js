@@ -130,50 +130,28 @@ class Characters extends Component {
     show() {
         let characterController = this;
         let container = this.getElement();
-        let tiers = this.getController().getTiers();
-        this.#filters = {};
         Utilities.empty(container);
-
-        // Add filter boxes
-        let characterToolbar = Utilities.createDiv('characterToolbar', container);
-        characterToolbar.appendChild(this.#createFilterBox('species'));
-        characterToolbar.appendChild(this.#createFilterBox('pronouns'));
-        characterToolbar.appendChild(this.#createFilterBox('sexuality'));
 
         // Create inner div to hold items
         let characterList = Utilities.createDiv('characterList', container);
 
-        // Group characters by the grouping tier
-        let characterGroups = tiers.getGroupedCharacters(this.#groupTierList);
-
-        // Show grouped characters with group banners
-        Object.values(characterGroups).forEach(function(group) {
-            if (group.characters.length == 0) return;
-            let header = Utilities.createDiv('characterGroupHeader', characterList);
-            header.innerText = group.name;
-            header.style.backgroundColor = group.color;
-            if (group.dark) {
-                header.style.color = 'white';
-            }
-            group.characters.forEach(function(characterTier) {
-                let character = characterController.getCharacter(characterTier.persona_id);
-                let portrait = document.createElement('div');
-                portrait.className = 'portrait';
-                portrait.style.backgroundImage = 'url(' + characterController.getPortrait(character.id) + ')';
-                characterList.appendChild(portrait);
-                let portraitName = document.createElement('div');
-                portraitName.className = 'portraitName';
-                portraitName.dataset.character = character.id;
-                portraitName.innerText = character.name;
-                portraitName.addEventListener('click', function(event) {
-                    characterController.onPortraitClick(event.target);
-                })
-                characterList.appendChild(portraitName);
-                character.containers = {
-                    portrait: portrait,
-                    name: portraitName
-                };
-            });
+        Object.values(this.#characters).forEach(function(character) {
+            let portrait = document.createElement('div');
+            portrait.className = 'portrait';
+            portrait.style.backgroundImage = 'url(' + characterController.getPortrait(character.id) + ')';
+            characterList.appendChild(portrait);
+            let portraitName = document.createElement('div');
+            portraitName.className = 'portraitName';
+            portraitName.dataset.character = character.id;
+            portraitName.innerText = character.name;
+            portraitName.addEventListener('click', function(event) {
+                characterController.onPortraitClick(event.target);
+            })
+            characterList.appendChild(portraitName);
+            character.containers = {
+                portrait: portrait,
+                name: portraitName
+            };
         });
     }
 
