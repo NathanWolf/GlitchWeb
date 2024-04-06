@@ -51,12 +51,12 @@
             <div id="profileButton" class="tabButton toolbarButton loggedout" data-tab="profile"></div>
         </div>
 
-        <div class="tab" id="home">
+        <div class="tab" id="home" style="display: none">
             <div class="tile navigation" data-tab="characters">Machines</div>
             <div class="tile navigation admin" data-tab="characterEditor" style="display: none">Machine Editor</div>
         </div>
 
-        <div class="tab" id="characters" style="display: none">
+        <div class="tab" id="characters">
         </div>
 
         <div class="tab" id="profile" style="display: none">

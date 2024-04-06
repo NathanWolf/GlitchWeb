@@ -116,9 +116,9 @@ class Glitch {
     }
 
     load() {
-        const love = this;
+        const glitch = this;
         this.#request('data/glitch.php', function() {
-            love.#processData(this.response);
+            glitch.#processData(this.response);
         });
     }
 
