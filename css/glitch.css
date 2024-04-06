@@ -1,0 +1,180 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+body {
+    background: #EEE;
+    overscroll-behavior-y: none;
+    overflow: hidden;
+    user-select: none;
+}
+
+.tile {
+    color: black;
+    width: 5em;
+    min-width: 5em;
+    height: 5em;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid black;
+    padding: 1em;
+    margin: 1em;
+    text-decoration: none;
+    font-size: 1.5em;
+    display: inline-block;
+    background-color: white;
+    cursor: pointer;
+}
+
+.tile:hover {
+    text-decoration: underline;
+    background-color: cyan;
+}
+
+.tile a {
+    text-decoration: none;
+}
+
+.popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.popupContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 64px;
+}
+
+.popupInnerContent {
+    background: white;
+    padding: 2em;
+}
+
+.tabContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.toolbar {
+    display: flex;
+    border: 1px solid black;
+}
+
+.tabButtons {
+    display: flex;
+    flex: auto;
+    overflow-x: auto;
+}
+
+.toolbarButton {
+    background: #888;
+    border: 1px solid darkblue;
+    padding: 2px 12px;
+    cursor: pointer;
+    color: black;
+    white-space: nowrap;
+}
+
+.toolbarButton:hover {
+    background: #444;
+    color: white;
+}
+
+.tabLink a {
+    text-decoration: none;
+    color: black;
+}
+
+.tabLink:hover {
+    background: #228;
+    color: white;
+}
+
+.tabLink:hover a {
+    color: white;
+}
+
+.tabButton.active {
+    background: black;
+    cursor: default;
+    color: white;
+}
+
+.tab {
+    display: flex;
+    margin-left: 16px;
+    margin-right: 16px;
+    overflow: auto;
+    height: 100%;
+    flex: 1;
+    padding-bottom: 16px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+#loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(-45deg, rgba(0,0,0,0.1), rgba(0,0,0,0.90));
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+}
+
+
+.statusPopup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.statusPopupContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.popupInnerContent {
+    background: white;
+    padding: 2em;
+}
+
+#home {
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-wrap: wrap;
+    align-content: start;
+}
