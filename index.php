@@ -43,9 +43,9 @@
 <body>
     <div class="tabContainer" id="mainContainer">
         <div class="toolbar">
-            <div class="tabButton active toolbarButton" data-tab="home">&#8962;</div>
+            <div class="tabButton toolbarButton" data-tab="home">&#8962;</div>
             <div class="tabButtons">
-                <div class="tabButton toolbarButton" data-tab="characters">Machines</div>
+                <div class="tabButton active toolbarButton" data-tab="characters">Machines</div>
                 <div class="tabButton toolbarButton admin" data-tab="characterEditor" style="display: none">Machine Editor</div>
             </div>
             <div id="profileButton" class="tabButton toolbarButton loggedout" data-tab="profile"></div>
