@@ -183,7 +183,7 @@ class CharacterEditor extends Editor {
                 break;
             }
         }
-        index = (index + direction) % characterList.length;
+        index = (index + direction + characterList.length) % characterList.length;
         this.showCharacter(characterList[index].id);
     }
 
