@@ -113,7 +113,8 @@ class CharacterEditor extends Editor {
         for (let propertyId in properties) {
             if (!properties.hasOwnProperty(propertyId)) continue;
             let property = properties[propertyId];
-            let propertyInput = this.createInput(editorForm, property);
+            let options = characters.getAllProperties(propertyId);
+            let propertyInput = this.createInput(editorForm, property, options);
             if (character.properties != null && character.properties.hasOwnProperty(propertyId)) {
                 propertyInput.value = character.properties[propertyId];
             }
