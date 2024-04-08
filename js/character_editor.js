@@ -85,7 +85,6 @@ class CharacterEditor extends Editor {
 
         let saveContainer = Utilities.createDiv('save', headerContainer);
         let saveButton = this.createSaveButton(saveContainer);
-        this.createSaveConfirm(saveContainer);
         let backButton = document.createElement('button');
         backButton.className = 'back';
         backButton.innerText = '< Back';
@@ -100,6 +99,7 @@ class CharacterEditor extends Editor {
         nextButton.addEventListener('click', () => {
             editor.onNextCharacter();
         });
+        this.createSaveConfirm(saveContainer);
 
         let editorContainer = Utilities.createDiv('editing', container);
         let editorForm = document.createElement('form');
@@ -147,14 +147,9 @@ class CharacterEditor extends Editor {
             }
             properties['chat'] = chatInput.value;
             properties['first_name'] = firstNameInput.value;
-            properties['last_name'] = lastNameInput.value;
             character.first_name = firstNameInput.value;
-            character.last_name = lastNameInput.value;
             character.name = character.first_name;
             character.full_name = character.first_name;
-            if (lastNameInput.value.length > 0) {
-                character.full_name += ' ' + lastNameInput.value;
-            }
             if (editor.#portraitOffset != null) {
                 properties.portraitOffset = editor.#portraitOffset;
             }
